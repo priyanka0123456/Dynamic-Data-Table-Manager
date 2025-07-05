@@ -69,10 +69,9 @@ const DataTable = () => {
       <TableContainer component={Paper}>
         <Table>
           <DragDropContext onDragEnd={handleDragEnd}>
-            {/** Wrap Droppable in fragment for valid return type */}
-            <>
-              <Droppable droppableId="columns" direction="horizontal" type="column">
-                {(provided) => (
+            <Droppable droppableId="columns" direction="horizontal" type="column">
+              {(provided) => (
+                <React.Fragment>
                   <TableHead ref={provided.innerRef} {...provided.droppableProps}>
                     <TableRow>
                       {visibleColumns.map((col, index) => (
@@ -90,11 +89,11 @@ const DataTable = () => {
                       ))}
                       <TableCell>Actions</TableCell>
                     </TableRow>
-                    {provided.placeholder}
                   </TableHead>
-                )}
-              </Droppable>
-            </>
+                  {provided.placeholder}
+                </React.Fragment>
+              )}
+            </Droppable>
           </DragDropContext>
 
           <TableBody>
