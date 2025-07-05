@@ -69,32 +69,32 @@ const DataTable = () => {
       <TableContainer component={Paper}>
         <Table>
           <DragDropContext onDragEnd={handleDragEnd}>
-           <Droppable droppableId="columns" direction="horizontal" type="column">
-  {(provided) => (
-    <>
-      <TableHead ref={provided.innerRef} {...provided.droppableProps}>
-        <TableRow>
-          {visibleColumns.map((col, index) => (
-            <Draggable key={col} draggableId={col} index={index}>
-              {(drag) => (
-                <TableCell
-                  ref={drag.innerRef}
-                  {...drag.draggableProps}
-                  {...drag.dragHandleProps}
-                >
-                  {col.toUpperCase()}
-                </TableCell>
-              )}
-            </Draggable>
-          ))}
-          <TableCell>Actions</TableCell>
-        </TableRow>
-      </TableHead>
-      {provided.placeholder}
-    </>
-  )}
-</Droppable>
-
+            {/** Wrap Droppable in fragment for valid return type */}
+            <>
+              <Droppable droppableId="columns" direction="horizontal" type="column">
+                {(provided) => (
+                  <TableHead ref={provided.innerRef} {...provided.droppableProps}>
+                    <TableRow>
+                      {visibleColumns.map((col, index) => (
+                        <Draggable key={col} draggableId={col} index={index}>
+                          {(drag) => (
+                            <TableCell
+                              ref={drag.innerRef}
+                              {...drag.draggableProps}
+                              {...drag.dragHandleProps}
+                            >
+                              {col.toUpperCase()}
+                            </TableCell>
+                          )}
+                        </Draggable>
+                      ))}
+                      <TableCell>Actions</TableCell>
+                    </TableRow>
+                    {provided.placeholder}
+                  </TableHead>
+                )}
+              </Droppable>
+            </>
           </DragDropContext>
 
           <TableBody>
