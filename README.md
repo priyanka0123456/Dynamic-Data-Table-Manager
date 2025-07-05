@@ -62,7 +62,7 @@ npm run dev
 
 4. **Build for production**
 ```bash
-npm run build && npm start
+npm run build && npm run dev
 ```
 
 ---
@@ -84,4 +84,4 @@ Or use another like `sample-team.csv` with different mock team data.
 ---
 ## 🙌 Credits
 
-Built with 💙 by Priyanka
+Built with ❤ by Priyanka😒👌
