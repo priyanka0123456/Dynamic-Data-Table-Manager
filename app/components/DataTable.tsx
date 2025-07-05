@@ -94,29 +94,32 @@ const DataTable = () => {
               dispatch({ type: 'table/setVisibleColumns', payload: updated });
             }}
           >
-            <Droppable droppableId="columns" direction="horizontal" type="column">
-              {(provided) => (
-                <TableHead ref={provided.innerRef} {...provided.droppableProps}>
-                  <TableRow>
-                    {visibleColumns.map((col, index) => (
-                      <Draggable key={col} draggableId={col} index={index}>
-                        {(drag) => (
-                          <TableCell
-                            ref={drag.innerRef}
-                            {...drag.draggableProps}
-                            {...drag.dragHandleProps}
-                          >
-                            {col.toUpperCase()}
-                          </TableCell>
-                        )}
-                      </Draggable>
-                    ))}
-                    <TableCell>Actions</TableCell>
-                    {provided.placeholder}
-                  </TableRow>
-                </TableHead>
+           <Droppable droppableId="columns" direction="horizontal" type="column">
+  {(provided) => (
+    <>
+      <TableHead ref={provided.innerRef} {...provided.droppableProps}>
+        <TableRow>
+          {visibleColumns.map((col, index) => (
+            <Draggable key={col} draggableId={col} index={index}>
+              {(drag) => (
+                <TableCell
+                  ref={drag.innerRef}
+                  {...drag.draggableProps}
+                  {...drag.dragHandleProps}
+                >
+                  {col.toUpperCase()}
+                </TableCell>
               )}
-            </Droppable>
+            </Draggable>
+          ))}
+          <TableCell>Actions</TableCell>
+        </TableRow>
+      </TableHead>
+      {provided.placeholder}
+    </>
+  )}
+</Droppable>
+
           </DragDropContext>
 
           <TableBody>
