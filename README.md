@@ -82,3 +82,6 @@ id,name,email,age,role,department,location
 Or use another like `sample-team.csv` with different mock team data.
 
 ---
+## 🙌 Credits
+
+Built with 💙 by Priyanka
