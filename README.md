@@ -46,7 +46,7 @@ This application allows users to dynamically import/export data, edit rows inlin
 
 1. **Clone this repo**
 ```bash
-git clone https://github.com/your-username/dynamic-data-table-manager.git
+git clone https://github.com/priyanka0123456/Dynamic-Data-Table-Manager.git
 cd dynamic-data-table-manager
 ```
 
