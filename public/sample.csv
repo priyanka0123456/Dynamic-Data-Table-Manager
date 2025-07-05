@@ -1,0 +1,4 @@
+name,email,age,role,department,location
+John Doe,john@example.com,30,Developer,Engineering,New York
+Jane Smith,jane@example.com,25,Designer,UI/UX,San Francisco
+Bob Brown,bob@example.com,40,Manager,Operations,Chicago
